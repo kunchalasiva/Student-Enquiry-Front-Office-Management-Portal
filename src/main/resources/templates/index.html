@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+	rel="stylesheet">
+<style type="text/css">
+body {
+	overflow-x: hidden;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<img class="navbar-brand" src="images/nareshit.logo.png"></img>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div>
+					<a class=" fw-bold text-dark btn ms-5 me-5" href="./">Home</a> <a
+						class="me-5 fw-bold btn text-dark ms-5  me-5" href="./login">Videoes</a>
+					<a class="me-5 fw-bold btn text-dark ms-5 me-5" href="course">Courses</a>
+					<a class="me-5 fw-bold btn text-dark ms-5 me-5" href="./profiles">Profile</a>
+				</div>
+				<form class="d-flex">
+					<a class="btn btn-warning fw-bold fs-5" href="login">Login</a>
+				</form>
+			</div>
+		</nav>
+		<div id="carouselExampleIndicators" class="carousel slide">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="0" class="active" aria-current="true"
+					aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="images/c1.jpg" class="d-block w-100" alt="..."
+						width="300px" height="400px">
+				</div>
+				<div class="carousel-item">
+					<img src="images/c2.jpg" class="d-block w-100" alt="..."
+						width="300px" height="400px">
+				</div>
+				<div class="carousel-item">
+					<img src="images/c3.jpg" class="d-block w-100" alt="..."
+						width="300px" height="400px">
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button"
+				data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+		<!-- SECTION PART -->
+		<section class="row">
+			<header
+				class="mt-5 ms-5 p-3 mb-5 d-flex flex-wrap justify-content-center">
+				<div
+					class="border ms-5 mt-3  d-flex justify-content-center align-items-center shadow-sm"
+					style="width: 300px;">
+					<div class="mt-3 mb-3">
+						<h1 class="bi bi-award   text-center  text-info "></h1>
+						<h1 class="mt-3 fw-bold">316,000+</h1>
+						<p class="text-secondary mt-2 text-center">Qualified
+							Instructor</p>
+					</div>
+				</div>
+				<div
+					class="border  mt-3 d-flex justify-content-center align-items-center shadow-sm"
+					style="width: 300px;">
+					<div class="mt-3 mb-3">
+						<h1 class="bi bi-people   text-center  text-warning "></h1>
+						<h1 class="mt-3 fw-bold">1.8 Billion+</h1>
+						<p class="text-secondary mt-2 text-center">Course enrolments</p>
+					</div>
+				</div>
+				<div
+					class="border  mt-3 d-flex justify-content-center align-items-center shadow-sm"
+					style="width: 300px;">
+					<div class="mt-3 mb-3">
+						<h1 class="bi bi-tv   text-center  text-success "></h1>
+						<h1 class="mt-3 fw-bold">41,000+</h1>
+						<p class="text-secondary mt-2 text-center">Courses in 42
+							languages</p>
+					</div>
+				</div>
+
+				<div
+					class="border  mt-3  d-flex justify-content-center align-items-center shadow-sm"
+					style="width: 300px;">
+					<div class="mt-3 mb-3">
+						<h1 class="bi bi-grid   text-center  text-success "></h1>
+						<h1 class="mt-3 fw-bold">179,000++</h1>
+						<p class="text-secondary mt-2 text-center">Online Videos</p>
+					</div>
+				</div>
+
+			</header>
+			<nav class="col-5 mt-5">
+				<div class="d-flex align-items-center justify-content-center">
+					<img alt="unlock_skills" src="images/student2.jpg" width="400px"
+						height="300px">
+				</div>
+			</nav>
+			<main class="col-7 mt-5">
+				<div class="text-primary fw-bold">
+					<h1>Unlock your</h1>
+					<h1 class="text-danger fw-bold">Skills</h1>
+					<!-- Fixed tag -->
+				</div>
+				<div class="mb-5">
+					<h4 class="text-secondary">
+						With our platform, you can quantify your skills, grow in <br>
+						your role and stay relevant on critical topics
+					</h4>
+					<button class="btn btn-primary fw-bold mt-3">Start a free
+						trial</button>
+				</div>
+			</main>
+		</section>
+		<p class="mt-5 mb-5 text-dark  fw-bold text-center">
+			<b class="h3 fw-bold">Featured courses</b><br> <span
+				class="text-secondary ">Discover your perfect program in our
+				courses....</span>
+		</p>
+
+		<section class="mt-4">
+
+			<main class="mt-5 d-flex flex-wrap justify-content-center">
+				<!-- Alignment fix -->
+				<!--Course-cards  -->
+				<!-- All cards below unchanged -->
+
+				<div class="card  ms-5  " style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/bootcampphython.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card  ms-5" style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/adobe.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card  ms-5" style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/vue.js.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card  ms-5 " style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/mysql.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card  ms-5 mt-5 " style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/codinblock.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card  ms-5 mt-5" style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/vue.js.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card  ms-5 mt-5 " style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/layout.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card  ms-5 mt-5 " style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/layout.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+					
+				<div class="card  ms-5 mt-5" style="width: 300px; height: 400px">
+					<div class=" text-center">
+						<img alt="" src="images/codinblock.jpg" class="card-top-img"
+							width="300px">
+					</div>
+					<div class="card-body ">
+						<span class="card-subtitle text-secondary mt-3">Code</span>
+						<h5 class="card-title h6 text-center mt-2 ">Complete Python
+							Bootcamp: Go from zero to hero in Python</h5>
+						<div class="text-center mt-3">
+							📖 10 Lessons / <span class="bi bi-clock"></span> 3h 25m
+						</div>
+						<div class="mt-3 ">
+							<del>$199.00</del>
+							<span class="fw-bold ">$99.00</span> <span class="ms-5"><button
+									class="btn btn-primary ">Enroll</button></span>
+						</div>
+					</div>
+				</div>
+			</main>
+
+			<footer class="mt-5 p-5 ">
+				<div
+					class="border  rounded rounded-2 rounded-circle border-1 shadow-sm bg-light text-dark ">
+
+					<div class="d-flex mt-5 justify-content-center align-items-center"
+						style="height: 300px">
+						<img alt="" src="images/think.jpg" class="rounded rounded-circle"
+							width="300px" height="300px">
+						<p class="text-secondary  h4 text-center me-5 lh.base">“The
+							best part about Our Platform is the selection. You can find a
+							course for anything you want to learn! Thank you..! You've
+							renewed my passion for learning and my dream of becoming a
+							full-stack developer. ”</p>
+					</div>
+				</div>
+				<div class="mt-5 text-center">
+					<h3 class="fw-bold">Find the right learning path for you</h3>
+					<p class="">Answer a few questions and match your goals to our
+						programs.</p>
+					<button class="btn btn-primary">Explore By Category</button>
+				</div>
+			</footer>
+		</section>
+
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
