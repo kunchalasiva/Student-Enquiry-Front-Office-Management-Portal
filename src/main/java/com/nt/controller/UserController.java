@@ -11,7 +11,7 @@ public class UserController {
 		return "login";
 	}
 	
-	@GetMapping("/singup") 
+	@GetMapping("/signin") 
 	public String userSingup() {
 		return "singup";
 	}
@@ -24,5 +24,10 @@ public class UserController {
 	@GetMapping("/course")
 	public String courseContent() {
 		return "course";
+	}
+	
+	@GetMapping("/forgotpwd")
+	public String forgotpassword() {
+		return "forgotpwd";
 	}
 }
