@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org/">
+<html xmlns:th="https://www.thymeleaf.org/">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -74,7 +74,7 @@
 
     <h5 class="mt-3 mb-3 fw-semibold">Unlock your account here</h5>
 
-    <p><strong>Your Email :</strong> <span class="text-primary">harikrishna@gmail.com</span></p>
+    <p><strong>Your Email :</strong> <span class="text-primary" th:text="${email}"></span></p>
 
     <form>
       <div class="mb-3">

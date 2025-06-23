@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org/">
+<html xmlns:th="https://www.thymeleaf.org/">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -73,20 +73,27 @@
     <p class="text-muted text-center" style="font-size: 13px;">Learn Here.. Lead Anywhere..!!</p>
 
     
-    <form>
+    <form action="singup" th:object="${singup}" method="post">
         <h3>Plese create account here</h3>
       <div class="mb-3">
-        <input type="password" class="form-control" placeholder="Name">
+      	<label class="form-lable" for="userName">Name</label>
+        <input type="text" class="form-control" th:field="*{userName}" placeholder="Name">
       </div>
       <div class="mb-3">
-        <input type="email" class="form-control" placeholder="Email">
+      	<label class="form-lable" for="userEmail">Email</label>
+        <input type="email" th:field="*{userEmail}" class="form-control" placeholder="Email">
       </div>
       <div class="mb-3">
-        <input type="number" class="form-control" placeholder="Phno">
+      	<label class="form-lable" for="userPhno">PhoneNumber</label>
+        <input type="number" th:field="*{userPhno}" class="form-control" placeholder="Phno">
       </div>
-      <a href="unlock" class="btn gradient-btn w-100">signup</a>
+      <button type="submit" class="btn gradient-btn w-100">signup</button>
     </form>
-
+    
+    <div>
+     <span th:text="${message}" class="text-success fw-bold"></span>
+    </div>
+    
     <div class="text-center mt-3">
       Do You have an account? 
       <a href="login" class="btn btn-sm login-link ms-2">LOGIN HERE</a>
