@@ -1,7 +1,5 @@
 package com.nt.service;
 
-import java.util.List;
-
 import com.nt.binding.LogInForm;
 import com.nt.binding.SignUpForm;
 import com.nt.binding.UnlockForm;
@@ -15,5 +13,5 @@ public interface IUserService {
 	
 	public UserEntity getByUserEmail(String mail);
 	
-	public List<UserEntity> userLogin(LogInForm form);
+	public String loginUser(LogInForm form);
 }

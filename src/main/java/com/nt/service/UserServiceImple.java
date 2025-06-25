@@ -1,9 +1,7 @@
 package com.nt.service;
 
-import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +22,13 @@ public class UserServiceImple implements IUserService {
 	@Autowired
 	private IUserRepository repository;
 	
-	
 
 	@Autowired
 	private EmailUtil email;
+	
+	@Autowired
+	private HttpSession session;
+	
 
 	@Override
 	public boolean registerUser(SignUpForm form) {
@@ -91,11 +92,19 @@ public class UserServiceImple implements IUserService {
 	}
 
 	@Override
-	public List<UserEntity> userLogin(LogInForm form) {
-		// use the repository
-		List<UserEntity> entity=repository.findAll();
-		return entity.stream().filter(e -> 
-						(e.getUserName().equalsIgnoreCase(form.getUserName()) || e.getUserEmail().equals(form.getEmail()))
-							&& e.getUserPwd().equalsIgnoreCase(form.getPassword())).collect(Collectors.toList());
+	public String loginUser(LogInForm form) {
+
+		UserEntity entity = repository.findByUserNameAndUserPwd(form.getUserName(), form.getPassword());
+		
+		// based on the name and password if record not found it returns null
+		if(entity==null) {
+			return "Invalid Credentials";
+		}
+		
+		System.out.println(entity.getId());
+		// if login success -> setting  the data into the session
+		session.setAttribute("UserId", entity.getId());
+		System.out.println(session.getAttribute("UserId"));
+		return "success";
 	}
 }

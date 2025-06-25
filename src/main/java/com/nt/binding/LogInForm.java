@@ -9,5 +9,4 @@ public class LogInForm {
 	
 	private String password;
 	
-	private String email;
 }

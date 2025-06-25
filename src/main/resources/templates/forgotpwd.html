@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org/">
+<html xmlns:th="https://www.thymeleaf.org/">
 <head>
 <meta charset="UTF-8">
 <title>RECOVERY PASSWORD</title>
@@ -51,14 +51,21 @@
         <p class="text-secondary text-center h6">learn here.. and lead any where..!</p>
     </div>
     <div>
-      <dl>
-        <dt> Recovery Password </dt>
-        <dd class="mt-2 text-center">
-            <input type="text" placeholder="Enter your email/phone number" class="form-control">
-            <a href="#" class="btn btn-primary w-50 mt-5 fw-bold ">submit</a>
-        </dd>
-      </dl>
-    <div class="text-center ">
+				<span th:text="${emailerror}" class="text-danger"></span>
+				<span th:text="${emailsucc}" class="text-success"></span>
+				<form th:action="@{/forgotpwd}" method="post">
+					<dl>
+						<dt>Recovery Password</dt>
+						<dd class="mt-2 text-center">
+							<input type="text" name="email"
+								placeholder="Enter your email/phone number" class="form-control" />
+							<input type="submit" value="Submit"
+								class="btn btn-primary w-50 mt-5 fw-bold form-control" />
+						</dd>
+					</dl>
+				</form>
+
+				<div class="text-center ">
               <a href="login" class="btn w-50 btn-outline-warning text-dark fw-bold border border-dark text-center">Login</a>
       </div>
     </div>

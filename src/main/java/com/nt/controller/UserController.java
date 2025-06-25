@@ -17,6 +17,7 @@ import com.nt.binding.SignUpForm;
 import com.nt.binding.UnlockForm;
 import com.nt.entity.UserEntity;
 import com.nt.service.IUserService;
+import com.nt.utils.EmailUtil;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -27,7 +28,7 @@ public class UserController {
 	private IUserService service;
 	
 	@Autowired
-	private HttpSession session;
+	private EmailUtil utilsEmail;
 	
 	@GetMapping("/singup") 
 	public String userSingup(Map<String,Object> map) {
@@ -88,22 +89,21 @@ public class UserController {
 	@GetMapping("/login")
 	public String userlogin(Model map) {
 		map.addAttribute("login",new LogInForm());
-		session.invalidate();
 		return "login";
 	}
 	
 	@PostMapping("/login")
-	public String userloginCredentials(@ModelAttribute LogInForm form,RedirectAttributes map) {
-		// use the service
-		List<UserEntity> entity=service.userLogin(form);
+	public String userloginCredentials(@ModelAttribute("login") LogInForm form,Model map) {
+		//use the service
+		String message=service.loginUser(form);
 		
-		if(entity.isEmpty()) {
-			map.addFlashAttribute("loginerror","Invalid Credentials");
-			return "redirect:/login";
-		}else {
-			session.setAttribute("UserId",form.getEmail());
+		
+		if(message.contains("success")) {
 			return "dashboard";
+		}else {
+			map.addAttribute("errorlogin", message);
 		}
+		return "login";
 	}
 	
 	
@@ -114,7 +114,27 @@ public class UserController {
 	}
 	
 	@GetMapping("/forgotpwd")
-	public String forgotpassword() {
+	public String forgotpassword(Model map) {
 		return "forgotpwd";
 	}
+	
+	@PostMapping("/forgotpwd")
+	public String recoverypassword(@RequestParam("email") String email,Model map) {
+		// use the service
+		 UserEntity entity =service.getByUserEmail(email);
+		 
+		 if(entity==null) {
+		   map.addAttribute("emailerror","Email not exist");
+		 }else {
+			// passing the password to the email
+			 String to = entity.getUserEmail();
+			 String subject ="Recovery Password";
+			 String body = "Your Account password : "+  entity.getUserPwd();
+			 
+			 utilsEmail.SendEmail(to, subject, body);
+				 map.addAttribute("emailsucc","Check your email & login");
+		 }
+		 return "forgotpwd";
+	}
+	
 }
