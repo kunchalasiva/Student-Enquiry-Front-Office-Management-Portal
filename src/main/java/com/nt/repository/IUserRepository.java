@@ -9,4 +9,7 @@ public interface IUserRepository extends JpaRepository<UserEntity, Integer> {
 
 	@Query("SELECT COUNT(userEmail) FROM UserEntity WHERE userEmail=:mail")
 	public Integer findByEmailId(String mail);
+	
+	public UserEntity findByUserEmail(String mail);
+    UserEntity findByUserNameAndUserPwd(String userName, String userPwd);
 }

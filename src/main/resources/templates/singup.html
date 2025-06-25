@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org/">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>SING UP</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
@@ -91,7 +91,9 @@
     </form>
     
     <div>
-     <span th:text="${message}" class="text-success fw-bold"></span>
+     <span th:text="${message}" class="text-success "></span>
+     <span th:text="${error}" 	class="text-danger "></span>
+     <span th:text="${emailerror}" class="text-danger "></span>
     </div>
     
     <div class="text-center mt-3">
