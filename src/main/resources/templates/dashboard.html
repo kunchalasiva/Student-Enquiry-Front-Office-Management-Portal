@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org/">
+<html xmlns:th="https://www.thymeleaf.org/">
 <head>
 <meta charset="UTF-8">
 <title>DASHBOARD</title>
@@ -37,9 +37,9 @@
 										<h4 class="mt-1 mb-5 pb-1">Your Performance</h4>
 									</div>
 
-									<h2>Total Enquiries : 256 </h2>
-									<h2 class="text-success">Enrolled : 84 </h2>
-									<h2 class="text-danger">Lost : 172</h2>
+									<h2>Total Enquiries :</h2><h2 th:text="${totalenq}"></h2>
+									<h2 class="text-success">Enrolled : <span th:text="${enrollenq}"></span>  </h2>
+									<h2 class="text-danger">Lost : <span th:text="${lostenq}"></span> </h2>
 
 								</div>
 							</div>
