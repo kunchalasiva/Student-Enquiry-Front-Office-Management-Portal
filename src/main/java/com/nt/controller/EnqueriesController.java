@@ -28,21 +28,22 @@ public class EnqueriesController {
 	@Autowired
 	private IEnquiryService service;
 	
-	@GetMapping("dashboard")
+	@GetMapping("/dashboard")
 	public String dashboard(Model map) {
-		
-		  Integer userid = (Integer) session.getAttribute("UserId");
-		  System.out.println("Session Id"+userid);
-		// use the service
-			Dashboard dashboard=service.getEnquires(userid);
-			
-			map.addAttribute("totalenq",dashboard.getTotalEnqCount());
-			map.addAttribute("enrollenq",dashboard.getEnrolledEnqCount());
-			map.addAttribute("lostenq",dashboard.getLostEnqCount());
-			
-		return "dashboard";
+	    Integer userid = (Integer) session.getAttribute("UserId");
+	    
+	    if (userid == null) {
+	        return "redirect:/"; 
+	    }
+
+	    Dashboard dashboard = service.getEnquires(userid);
+	    map.addAttribute("totalenq", dashboard.getTotalEnqCount());
+	    map.addAttribute("enrollenq", dashboard.getEnrolledEnqCount());
+	    map.addAttribute("lostenq", dashboard.getLostEnqCount());
+
+	    return "dashboard";
 	}
-	
+
 	
 	@GetMapping("/logout")
 	public String logout() {
@@ -66,14 +67,23 @@ public class EnqueriesController {
 	
 	
 	@PostMapping("/add")
-	public String addStudentEnquires(@ModelAttribute StudentForm entity,RedirectAttributes model) {
-		// use the service
-		String message=service.addEnquiries(entity);
-		model.addFlashAttribute("student", new StudentForm());
-		model.addFlashAttribute("enqsave",message);
-		System.out.println(entity);
-		return "redirect:/add";
+	public String addStudentEnquires(@ModelAttribute StudentForm form, RedirectAttributes model) {
+	    // 1. Get user ID from session
+	    Integer userId = (Integer) session.getAttribute("UserId");
+	    if (userId == null) {
+	        return "redirect:/"; 
+	    }
+	    
+	    // 2. Setting the userId into the form
+	    form.setUserId(userId); 
+	    
+	    // 3. Save the enquiry
+	    String message = service.addEnquiries(form);
+	    model.addFlashAttribute("student", new StudentForm());
+	    model.addFlashAttribute("enqsave", message);
+	    return "redirect:/add";
 	}
+
 	
 	@GetMapping("/view")
 	public String view_Enqueries() {

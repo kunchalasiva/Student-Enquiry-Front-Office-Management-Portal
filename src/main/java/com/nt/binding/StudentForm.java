@@ -14,4 +14,6 @@ public class StudentForm {
 	private String courseName;
 	
 	private String enqStatus;
+
+	private Integer userId;
 }

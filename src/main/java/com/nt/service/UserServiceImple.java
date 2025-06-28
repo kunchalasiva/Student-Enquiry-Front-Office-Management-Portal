@@ -54,6 +54,7 @@ public class UserServiceImple implements IUserService {
 //			 Pass these generated password to the email.
 			String to = form.getUserEmail();
 			String subject = "Unlock Your Account for Signup";
+			
 			StringBuilder builder = new StringBuilder();
 
 			builder.append("Hello " + form.getUserName());
@@ -91,20 +92,18 @@ public class UserServiceImple implements IUserService {
 		return true;
 	}
 
+
 	@Override
 	public String loginUser(LogInForm form) {
+	    UserEntity entity = repository.findByUserNameAndUserPwd(form.getUserName(), form.getPassword());
+	    
+	    if (entity == null) {
+	        return "Invalid Credentials";
+	    }
 
-		UserEntity entity = repository.findByUserNameAndUserPwd(form.getUserName(), form.getPassword());
-		
-		// based on the name and password if record not found it returns null
-		if(entity==null) {
-			return "Invalid Credentials";
-		}
-		
-		System.out.println(entity.getId());
-		// if login success -> setting  the data into the session
-		session.setAttribute("UserId", entity.getId());
-		System.out.println(session.getAttribute("UserId"));
-		return "success";
+	    session.setAttribute("UserId", entity.getId()); // ✅ this line sets the session
+
+	    return "success";
 	}
+
 }

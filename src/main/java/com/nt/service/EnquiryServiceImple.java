@@ -79,13 +79,17 @@ public class EnquiryServiceImple implements IEnquiryService {
     	return statusRepo.findAll();
     }
     
+  
     @Override
-    public String addEnquiries(StudentForm entity) {
-    	 // use the repo
-    	StudentEntity studententity = new StudentEntity();
-    	BeanUtils.copyProperties(entity, studententity);
-    	
-    	studentRepo.save(studententity);
-    	return "Enquiry Saved";
+    public String addEnquiries(StudentForm form) {
+        StudentEntity entity = new StudentEntity();
+        BeanUtils.copyProperties(form, entity);
+
+        UserEntity user = userRepo.findById(form.getUserId()).orElse(null);
+        entity.setUser(user); 
+
+        studentRepo.save(entity);
+
+        return "Enquiry Saved";
     }
 }
